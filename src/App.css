@@ -12,7 +12,76 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.sub-nav{
+  
+}
+.catg-h3{
+  padding: 8px !important;
+  font-size: 20px;
+  width: 500px;
+}
+.r-ser{
+  margin-left: 10px !important;
+}
+.list-catg{
+  padding: 16px;
+  border: 1px solid greenyellow;
+  margin: 12px;
+  width: 75%;
+}
+.lis-row{
+  margin:auto;
+  margin-left: 80px;
+}
+.search{
+  margin-top: 55px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nam-i{
+  margin-left: 2%;
+}
+.icon-i{
+  margin-left:  12% !important;
+}
+.icon-d{
+  margin-left: 10px !important;
+}
+.row-list{
+  margin-top: 20px !important;
+}
+.inpt-catg{
+  width: 420px;
+  padding: 6px;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid green;
+}
 
+.btn-catg{
+  margin-left: 25px;
+  width: 75px !important;
+}
+.cont{
+  margin-top: 50px !important;
+}
+.sub-n{
+  margin-top: 20px !important;
+  margin-left: -20px;
+  color: #056e25;
+  font-size: 20px;
+  font-weight: 500;
+}
+.logo{
+  margin-top: 40px;
+  width: 150px;
+  height: 80px;
+}
+.sidebar{
+  height: 100vh;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -2,7 +2,7 @@ import React from 'react'
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import Slidebar from './Slidebar';
 
-function Vendor() {
+function Stock() {
   return (
     <div className='container-fluid'>
         <div className='row'>
@@ -12,11 +12,11 @@ function Vendor() {
                 </ProSidebarProvider>
             </div>
             <div className='col-9'>
-                Vendors
+                Avail STOCKS
             </div>
         </div>
     </div>
   )
 }
 
-export default Vendor
+export default Stock

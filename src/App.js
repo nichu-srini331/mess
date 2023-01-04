@@ -9,6 +9,7 @@ import { ProSidebarProvider } from 'react-pro-sidebar';
 import Slidebar from './Slidebar';
 import { BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Stock from './Stock';
+import Test from './Test';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Category/>}/>
         <Route path='/ven' element={<Vendor/>}/>
         <Route path='/stock' element={<Stock/>}/>
+        <Route path="/test" element={<Test/>}/>
       </Routes>
      </Router>
 

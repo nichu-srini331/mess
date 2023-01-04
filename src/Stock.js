@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Table } from 'react-bootstrap';
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import Slidebar from './Slidebar';
+import  Axios  from 'axios';
+import { useEffect } from 'react';
 
 function Stock() {
+    const[curr,setcurr] = useState([]);
+
+    useEffect(()=>{
+        Axios.get("http://localhost:3002/stock").then((res)=>{
+          setcurr(res.data);
+        })
+      })
+      const sell = () => {
+        curr.map((e)=>{console.log(e.quantity)})
+      }
   return (
     <div className='container-fluid'>
         <div className='row'>
@@ -12,7 +25,30 @@ function Stock() {
                 </ProSidebarProvider>
             </div>
             <div className='col-9'>
-                Avail STOCKS
+                <h1>Available STOCK</h1>
+<br></br>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>ITEMS</th>
+                            <th>CATEGORY</th>
+                            <th>QUANTITY</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {curr.map((e)=>{
+                            return(
+                            <tr>
+                                <td>{e.item}</td>
+                                <td>{e.category}</td>
+                                <td>{e.quantity}</td>
+                            </tr>
+                            )
+                        })}
+                        
+                    </tbody>
+
+                </Table>
             </div>
         </div>
     </div>

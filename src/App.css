@@ -22,6 +22,7 @@
 }
 .r-ser{
   margin-left: 10px !important;
+  z-index: 2 !important;
 }
 .list-catg{
   padding: 16px;
@@ -37,6 +38,23 @@
   margin-top: 55px !important;
   margin-left: auto;
   margin-right: auto;
+  
+}
+.btn-del{
+  
+}
+.pur{
+  cursor: pointer !important;
+}
+.r-1{
+  height: 100vh;
+}
+.navs{
+  position: fixed;
+  width: 25% !important;
+  z-index: -5 !important;
+
+
 }
 .nam-i{
   margin-left: 2%;
@@ -58,6 +76,8 @@
   border-left: none;
   border-right: none;
   border-bottom: 1px solid green;
+  z-index: 1;
+
 }
 
 .btn-catg{

@@ -13,12 +13,12 @@ import { Link } from 'react-router-dom';
 
 function Slidebar() {
   return (
-    <div className='container-fluid'>
+    <div>
   <Sidebar className='sidebar'>
   <Menu>
     <div className='row'> <MenuItem> <img src={rmk} className='logo'/> </MenuItem></div>
     <div className='cont'>
-    <div className='row'> <MenuItem className='sub-nav sub-n'> <ShopIcon/> <Link to='/purs'>Purchase</Link>  </MenuItem></div>
+    <div className='row'> <MenuItem className='sub-nav sub-n'> <ShopIcon/> <Link to='/purs' className='pur'>Purchase</Link>  </MenuItem></div>
  <div className='row'><MenuItem className='sub-n'><LocalShippingIcon/><Link to='/dis'> Dispatch </Link> </MenuItem></div>
  <div className='row'><MenuItem className='sub-n'><StoreIcon/> <Link to='/stock'>Available Stock</Link> </MenuItem></div>
  <div className='row'> <MenuItem className='sub-n'><AssessmentIcon/><Link to='/rep'> Reports</Link> </MenuItem></div>

@@ -10,6 +10,10 @@ import { BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Stock from './Stock';
 import Login from './Components/loginComponent/login';
 import Test from './Test';
+import CatogeryRp from './Components/Reoprt/CatogeryRp';
+import AverageRp from './Components/Reoprt/AverageRp';
+import MonthlyRp from './Components/Reoprt/MonthlyRp';
+import ItemRp from './Components/Reoprt/ItemRp';
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
         <Route path='/ven' element={<Vendor/>}/>
         <Route path='/stock' element={<Stock/>}/>
         <Route path="/test" element={<Test/>}/>
+        <Route path="/catogery" element={<CatogeryRp/>} />
+        <Route path="/average" element={<AverageRp/>} />
+        <Route path="/monthly" element={<MonthlyRp/>} />
+        <Route path="/item" element={<ItemRp/>} />
       </Routes>
      </Router>
 

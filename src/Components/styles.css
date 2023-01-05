@@ -12,7 +12,9 @@
     color: #5f779e;
     margin-left: 3.7rem;
 }
-
+.date{
+    margin-right: auto !important;
+}
 .container-fluid ul li a
 {
     font-family: 'Poppins', sans-serif;

@@ -5,6 +5,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import Slidebar from '../Slidebar';
+import "./tables.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import Button from 'react-bootstrap/Button';
 
 export default function Dispatch2() {
   const [items, setItems] = useState([]);
@@ -226,134 +229,157 @@ export default function Dispatch2() {
   };
 
   return (
+    <div className="container-fluid">
     <div className="row">
-      <div className='col-3'>
+      <div className='col-3 dis-side'>
       <ProSidebarProvider>
       <Slidebar/>
 </ProSidebarProvider>
       </div>
     
 <div className="col-9">
-      <div className="container" style={{ marginTop: "3%" }}>
-        <label for="date">DATE:</label>
-        <input type="date" id="date" name="date" />
-        <br />
-        <br />
-
+      <div className="container">
+        
+          <h1 className="h1-dis">DISPATCH SECTION</h1>
+        <div className="row r-dis">
+          <div className="col-3">
+          <label for="date"> </label>
+ <input type="date" id="date" name="date" className="inpt-d"/>
+          </div>
+           <div className="col-3"></div>
+           <div className="col-3 btn-dis"><Button onClick={addRow}>Click to Add Cols</Button></div>
+        </div>
+       <div className="row">
+        <div className="col-12 tab-dis">
         <Table striped bordered hover id="table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Select Item</th>
-              <th>Total Quantity</th>
-              <th>Current Quantity</th>
-              <th>RMK</th>
-              <th>RMD</th>
-              <th>RMKCET</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  onChange={getQuantity}
-                  id="1"
-                >
-                  <option selected>Select</option>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Select Item</th>
+      <th>Total Quantity</th>
+      <th>Current Quantity</th>
+      <th>RMK</th>
+      <th>RMD</th>
+      <th>RMKCET</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          onChange={getQuantity}
+          id="1"
+        >
+          <option selected>Select</option>
 
-                  {items.map((item, idx) => {
-                    return (
-                      <option key={idx} value={item.item}>
-                        {item.item}
-                      </option>
-                    );
-                  })}
-                </select>
-              </td>
-              <td>
-                <div class="input-group mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="Total Quantity"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                    id="1 totquantity"
-                    defaultValue={0}
-                    disabled
-                  />
-                </div>
-              </td>
-              <td>
-                <div class="input-group mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="Cureent Quantity"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                    id="1 currquantity"
-                    defaultValue={0}
-                    disabled
-                  />
-                </div>
-              </td>
-              <td>
-                <div class="input-group mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="RMK"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                    id="1 RMK"
-                    defaultValue={0}
-                    onChange={addValue}
-                  />
-                </div>
-              </td>
+          {items.map((item, idx) => {
+            return (
+              <option key={idx} value={item.item}>
+                {item.item}
+              </option>
+            );
+          })}
+        </select>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Total Quantity"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            id="1 totquantity"
+            defaultValue={0}
+            disabled
+          />
+        </div>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Cureent Quantity"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            id="1 currquantity"
+            defaultValue={0}
+            disabled
+          />
+        </div>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="RMK"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            id="1 RMK"
+            defaultValue={0}
+            onChange={addValue}
+          />
+        </div>
+      </td>
 
-              <td>
-                <div class="input-group mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="RMD"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                    id="1 RMD"
-                    defaultValue={0}
-                    onChange={addValue}
-                  />
-                </div>
-              </td>
-              <td>
-                <div class="input-group mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="RMKCET"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                    id="1 RMKCET"
-                    defaultValue={0}
-                    onChange={addValue}
-                  />
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
+      <td>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="RMD"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            id="1 RMD"
+            defaultValue={0}
+            onChange={addValue}
+          />
+        </div>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="RMKCET"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            id="1 RMKCET"
+            defaultValue={0}
+            onChange={addValue}
+          />
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
-        <button onClick={addRow}>Click me</button>
-        <br />
-        <br />
-        <button onClick={submit}>Submit</button>
+        </div>
+       </div>
+       <Button onClick={submit} className="btn-dis2">Submit</Button>
       </div>
       </div>
     </div>
+    </div>
   );
 }
+
+
+// <h1>DISPATCH SECTION </h1>
+// <div className="date">
+// <label for="date">DATE:</label>
+// <input type="date" id="date" name="date" />
+// </div>
+// <br />
+// <br />
+// <button onClick={addRow}>Click me</button>
+
+
+// <br />
+// <br />
+// <button onClick={submit}>Submit</button>

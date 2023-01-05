@@ -100,7 +100,7 @@ function Vendor() {
           <div className='row'>
             <div className='col-6'>
               <h1>LIST OF VENDORS</h1>
-              <input type="text"/>
+            
             </div>
           </div>
           <div className='row r-ser'>
@@ -111,7 +111,8 @@ function Vendor() {
             </div>
           </div>
           <div className='row row-list'>
-            <div className='col lis-row'>
+            <div className='col-12 lis-row'>
+            
               {vendor.filter(i=>i.vendorName.includes(  cat)).map((i)=>{return(
                 <div className='row list-catg'>
                   <div className='col-7 nam-i'>{i.vendorName} - - {i.category}</div> <Button variant="primary" className='btn-catg col-2' onClick={(e)=>{getedit(e.target.value)}} value={i.vendorName}>EDIT</Button> <Button variant="success" className='btn-catg col-3' onClick={(e)=>{getcatg(e.target.value)}}  value={i.vendorName}>DELETE</Button>
@@ -123,6 +124,7 @@ function Vendor() {
         </div>
     </div>
     </div>
+  
   )
 }
 

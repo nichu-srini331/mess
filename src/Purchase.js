@@ -2,6 +2,7 @@ import React from 'react'
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import Slidebar from './Slidebar';
 
+
 function Purchase() {
   return (
     <div className='container-fluid'>
@@ -12,7 +13,7 @@ function Purchase() {
 </ProSidebarProvider>
         </div>
         <div className='col-9'>
-          PURCHASE
+          
         </div>
       </div>
     </div>

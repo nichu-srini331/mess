@@ -106,36 +106,36 @@ Axios.post("http://localhost:3002/itms",{
         <Modal.Body>
         {/* {its.map((e)=>{return(<div>{e.item}</div>)})} */}
         </Modal.Body>
-        <Button onClick={handleadd} className="btn">Submit</Button>
-        <Button onClick={modOff}>CLOSE</Button>
+        <Button onClick={handleadd} className="btn-1">Submit</Button>
+        <Button onClick={modOff} className="btn-2">CLOSE</Button>
       </Modal>
       <Modal show={mod1}>
       <Modal.Header>{del}</Modal.Header>
         <Modal.Body>
         <Modal.Header>Click items to be deleted</Modal.Header>
         {/* onClick={delt(e.item)} */}
-        <input type="text" onChange={(e)=>{setq(e.target.value)}}/>
-        {its.filter(e=>e.item.includes(q)).map((e)=>{return(<button className="btn-del" onClick={(e)=>{delt(e.target.value)}} value={e.item}>{e.item}</button>)})}
+        <input type="text" onChange={(e)=>{setq(e.target.value)}} placeholder="Enter item to search"/>
+        {its.filter(e=>e.item.includes(q)).map((e)=>{return(<button className="btn-del btn btn-link" onClick={(e)=>{delt(e.target.value)}} value={e.item}>{e.item}</button>)})}
         </Modal.Body>
-        <Button onClick={handleadd} className="btn">Submit</Button>
-        <Button onClick={modOff1}>CLOSE</Button>
+        <Button onClick={handleadd} className="btn-1">Submit</Button>
+        <Button onClick={modOff1} className="btn-2">CLOSE</Button>
       </Modal>
-      <Modal show={mod2}>
+      <Modal show={mod2} className="mod2">
       <Modal.Header>{del}</Modal.Header>
         <Modal.Body>
         <Modal.Header>Click items to be edited</Modal.Header>
         {/* onClick={delt(e.item)} */}
-        <input type="text" onChange={(e)=>{setedit(e.target.value)}}/>
+        <input type="text" placeholder='Enter item' className='inpt-mod'  onChange={(e)=>{setedit(e.target.value)}}/>
         <input type="text" onChange={(e)=>{setq(e.target.value)}} placeholder="Search for item"/>
         {its.filter(e=>e.item.includes(q)).map((e)=>{return(
           <div>
-<button className="btn-del" onClick={(e)=>{edt(e.target.value)}} value={e.item}>{e.item}</button>
+<button className="btn-del btn btn-link" onClick={(e)=>{edt(e.target.value)}} value={e.item}>{e.item}</button>
 
           </div>
         )})}
         </Modal.Body>
-        <Button onClick={handleadd} className="btn">Submit</Button>
-        <Button onClick={modOff2}>CLOSE</Button>
+        <Button onClick={handleadd} className="btn-1">Submit</Button>
+        <Button onClick={modOff2} className="btn-2">CLOSE</Button>
       </Modal>
       <div className='row'>
         <div className='col-3'>
@@ -162,7 +162,7 @@ Axios.post("http://localhost:3002/itms",{
             <div className='col-12 lis-row'>
               {arr.filter(u=>u.includes(query)).map((u)=>{return(
                 <div className='row list-catg'>
-                  <div className='col-7 nam-i'>{u}</div> <Button variant="primary" className='btn-catg col-2' onClick={(e)=>{getcatg1(e.target.value)}} value={u}>EDIT</Button> <Button variant="success" className='btn-catg col-3' onClick={(e)=>{getcatg(e.target.value)}} value={u}>DELETE</Button>
+                  <div className='col-7 nam-i'>{u}</div> <Button variant="outline-success" className='btn-catg col-2' onClick={(e)=>{getcatg1(e.target.value)}} value={u}>EDIT</Button> <Button variant="success" className='btn-catg col-3' onClick={(e)=>{getcatg(e.target.value)}} value={u}>DELETE</Button>
                   </div>
               )})}
             </div>

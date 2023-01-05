@@ -1,6 +1,6 @@
 import './App.css';
 import Vendor from './Vendor';
-import Purchase from './Components/purchaseComponent/purchase';
+import Purchase from './Components/purchaseComponent/Purchase';
 import Dispatch from './Dispatch';
 import Report from './Report';
 import Category from './Category';
@@ -23,7 +23,7 @@ function App() {
         <Route path='/category' element={<Category/>}/>
         <Route path='/ven' element={<Vendor/>}/>
         <Route path='/stock' element={<Stock/>}/>
-        <Route path="/test" element={<Test/>}/>
+          <Route path="/test" element={<Test/>}/>
       </Routes>
      </Router>
 

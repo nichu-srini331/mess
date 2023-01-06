@@ -15,7 +15,7 @@ export default function Dispatch2() {
   
   useEffect(() => {
     axios
-      .get("http://localhost:5000/dispatch/retrive")
+      .get("http://localhost:3002/dispatch/retrive")
       .then(function (response) {
         // handle success
         setItems(response.data);
@@ -43,7 +43,7 @@ export default function Dispatch2() {
     let quantity = document.getElementById(id + " totquantity");
     let currentQuantity = document.getElementById(id + " currquantity");
     axios
-      .post("http://localhost:5000/dispatch/getQuantity", {
+      .post("http://localhost:3002/dispatch/getQuantity", {
         itemName: itemName,
       })
       .then(function (response) {
@@ -69,8 +69,9 @@ export default function Dispatch2() {
     let rmk = parseFloat(document.getElementById(id + " RMK").value);
     let rmd = parseFloat(document.getElementById(id + " RMD").value);
     let rmkcet = parseFloat(document.getElementById(id + " RMKCET").value);
+    let school = parseFloat(document.getElementById(id + " SCHOOL").value);
 
-    let currentQuantity = totQuantity - (rmk + rmd + rmkcet);
+    let currentQuantity = totQuantity - (rmk + rmd + rmkcet + school);
     if(currentQuantity<0){
       window.alert("Item Quantity exceeded max limit")
       let x =document.getElementById(id+' '+place);
@@ -86,12 +87,13 @@ export default function Dispatch2() {
     let date = document.getElementById("date").value;
 
     class Obj {
-      constructor(item, currentQuantity,rmk,rmd,rmkcet) {
+      constructor(item, currentQuantity,rmk,rmd,rmkcet,school) {
         this.ItemName = item;
         this.CurrentQuantity = currentQuantity;
         this.RMK = rmk;
         this.RMD = rmd;
         this.RMKCET = rmkcet;
+        this.SCHOOL = school;
         this.DATE = date;
       }
     }
@@ -103,10 +105,11 @@ export default function Dispatch2() {
       let rmk = document.getElementById(i + " RMK").value;
       let rmd = document.getElementById(i + " RMD").value;
       let rmkcet = document.getElementById(i + " RMKCET").value;
+      let school = document.getElementById(i + " SCHOOL").value;
 
       
 
-      let obj = new Obj(item, currentQuantity,rmk,rmd,rmkcet);
+      let obj = new Obj(item, currentQuantity,rmk,rmd,rmkcet,school);
 
       arr.push(obj);
       
@@ -116,7 +119,7 @@ export default function Dispatch2() {
     console.log(arr);
 
 
-    axios.post('http://localhost:5000/dispatch/updateDispatch', {
+    axios.post('http://localhost:3002/dispatch/updateDispatch', {
       ItemArray : arr
 
     })
@@ -142,6 +145,7 @@ export default function Dispatch2() {
     let cell5 = row.insertCell();
     let cell6 = row.insertCell();
     let cell7 = row.insertCell();
+    let cell8 = row.insertCell();
 
     //select
 
@@ -224,6 +228,16 @@ export default function Dispatch2() {
 
     cell7.appendChild(input5);
 
+    let input6 = document.createElement("input");
+    input6.setAttribute("type", "number");
+    input6.setAttribute("placeholder", "School");
+    input6.setAttribute("class", "form-control");
+    input6.setAttribute("id", counter + " SCHOOL");
+    input6.defaultValue = 0;
+    input6.addEventListener("change", addValue, false);
+
+    cell8.appendChild(input6);
+
     cell1.innerHTML = counter;
 
     setCounter(counter + 1);
@@ -262,6 +276,7 @@ export default function Dispatch2() {
       <th>RMK</th>
       <th>RMD</th>
       <th>RMKCET</th>
+      <th>School</th>
     </tr>
   </thead>
   <tbody>
@@ -351,6 +366,20 @@ export default function Dispatch2() {
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
             id="1 RMKCET"
+            defaultValue={0}
+            onChange={addValue}
+          />
+        </div>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="School"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            id="1 SCHOOL"
             defaultValue={0}
             onChange={addValue}
           />

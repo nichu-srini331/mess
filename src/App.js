@@ -1,6 +1,6 @@
 import './App.css';
 import Vendor from './Vendor';
-import Purchase from './Components/purchaseComponent/Purchase';
+import Purchase from './Components/purchaseComponent/purchase';
 import Dispatch from './Dispatch';
 import Report from './Report';
 import Category from './Category';

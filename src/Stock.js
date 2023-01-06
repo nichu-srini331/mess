@@ -4,9 +4,12 @@ import { ProSidebarProvider } from 'react-pro-sidebar';
 import Slidebar from './Slidebar';
 import  Axios  from 'axios';
 import { useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import SearchIcon from '@mui/icons-material/Search';
 
 function Stock() {
     const[curr,setcurr] = useState([]);
+    const[query,setquery] = useState([])
 
     useEffect(()=>{
         Axios.get("http://localhost:3002/stock").then((res)=>{
@@ -27,6 +30,12 @@ function Stock() {
             <div className='col-9'>
                 <h1>Available STOCK</h1>
 <br></br>
+<div className='ser-ava'>
+<SearchIcon/>
+              <input placeholder='Enter item name to check.....' type="text" className='inpt-catg' autoFocus onChange={(e)=>{setquery(e.target.value)}} value={query}/>
+              
+              <Button variant="success" className='btn-catg'>ADD</Button>
+              </div>
                 <Table>
                     <thead>
                         <tr>
@@ -36,7 +45,7 @@ function Stock() {
                         </tr>
                     </thead>
                     <tbody>
-                        {curr.map((e)=>{
+                        {curr.filter((e)=>e.item.includes(query)).map((e)=>{
                             return(
                             <tr>
                                 <td>{e.item}</td>

@@ -19,6 +19,7 @@ export default function Dispatch2() {
       .then(function (response) {
         // handle success
         setItems(response.data);
+        console.log(response.data,"Hiiiiiiiiiiiiiii")
       })
       .catch(function (error) {
         // handle error

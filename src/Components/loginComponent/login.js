@@ -4,6 +4,10 @@ import './login.css';
 import Button from "react-bootstrap/Button";
 import clgPhoto from './RMKEC.jpg';
 import logo from './logo.png';
+import { Link } from 'react-router-dom';
+
+
+
 
 export default function Login() {
   const [name, setName] = useState("");
@@ -49,9 +53,9 @@ export default function Login() {
             />
           </Form.Group>
         <div className='button'>
-          <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Link to='/stock' className="linkt">  <Button block size="lg" type="submit" disabled={!validateForm()}>
             Login
-          </Button>
+          </Button></Link>
       </div>  
         </Form>
       </div>

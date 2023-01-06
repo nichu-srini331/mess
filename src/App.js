@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
      <Router>
-      <Routes>
+      <Routes>  
         <Route path='/' element={<Login/>}/>
         <Route path='/dis' element={<Dispatch/>}/>
         <Route path='/rep' element={<Report/>}/>

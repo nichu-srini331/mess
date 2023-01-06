@@ -3,6 +3,9 @@ import Table from "react-bootstrap/Table";
 import axios from "axios";
 import { useState ,useEffect} from "react";
 import './purchase.css';
+import { ProSidebarProvider } from 'react-pro-sidebar';
+import Slidebar from '../../Slidebar';
+import "../tables.css";
 
 export default function Purchase() {
   const [items, setItems] = useState([]);
@@ -173,23 +176,30 @@ export default function Purchase() {
 
   
   return (
-    <div>
-      <h1 style={{ marginTop: "2%" }}>Enter Purchase Details</h1>
-      <div className="container" style={{ marginTop: "3%" }}>
-      <div className="col">
-        <div className="left">
-          <label for="date" id="date-label">Date:</label>
-          <input type="date" id="date" name="date" />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-3">
+        <ProSidebarProvider>
+      <Slidebar/>
+</ProSidebarProvider>
         </div>
-        <div className="right">
-          <labell for="number" id="row">Enter the number of rows : </labell>
-          <input type="number" id="num" />
-          <button class="btn btn-primary" id="add-btn" onClick={generateRows}>Add</button>
-
-        </div>
-      </div>
-      </div>
-        <Table striped bordered hover id="table">
+        <div className="col-9">
+          <div className="container">
+          <h1 className="h1-dis">PURCHASE SECTION</h1>
+            <div className="row r-dis">
+              <div className="col-3">
+              <label for="date" id="date-label">Date:</label>
+          <input type="date" id="date" name="date" className="inpt-d"/>
+              </div>
+              <div className="col-3"></div>
+              <div className="col-3 pur-a">
+              <labell for="number" id="row">Enter the number of rows : </labell>
+          <input type="number" id="num"  />
+          <button class="btn btn-primary btn-pur" id="add-btn" onClick={generateRows}>Add</button>
+              </div>
+            </div>
+            <div className="row tab-dis">
+            <Table striped bordered hover id="table">
           <thead>
             <tr>
               <th>SNo</th>
@@ -281,9 +291,35 @@ export default function Purchase() {
             </tr>
           </tbody>
         </Table>
-        <br />
-        <button class="btn btn-primary" id="submit-btn" onClick={submit}>Submit</button>
+            </div>
+            <button class="btn btn-primary btn-dis1" id="submit-btn" onClick={submit}>Submit</button>
+          </div>
+
+        </div>
       </div>
+
+    </div>
+      
     
   );
 }
+{/* 
+<h1 style={{ marginTop: "2%" }}>Enter Purchase Details</h1>
+      <div className="container" style={{ marginTop: "3%" }}>
+      <div className="col">
+        <div className="left">
+          <label for="date" id="date-label">Date:</label>
+          <input type="date" id="date" name="date" />
+        </div>
+        <div className="right">
+          <labell for="number" id="row">Enter the number of rows : </labell>
+          <input type="number" id="num" />
+          <button class="btn btn-primary" id="add-btn" onClick={generateRows}>Add</button>
+
+        </div>
+      </div>
+      </div>
+       
+        <br />
+        <button class="btn btn-primary" id="submit-btn" onClick={submit}>Submit</button>
+      </div> */}

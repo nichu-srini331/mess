@@ -6,6 +6,17 @@
     margin-left: auto;
 
 }
+.btn-dis1{
+    margin-left: 350px !important;
+    margin-top: 50px;
+}
+.btn-pur{
+    margin-left: 200px !important;
+    margin-top: -66px;
+}
+.pur-a{
+    margin-top: -20px;
+}
 .r-dis{
     margin-top: 55px;
 }

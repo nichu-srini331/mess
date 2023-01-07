@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { ProSidebarProvider } from 'react-pro-sidebar';
-import Slidebar from '../Slidebar';
+import Slidebar from '../../Slidebar';
 import "./tables.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
